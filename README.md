@@ -35,7 +35,9 @@ hsd dev
 ```
 if your main branch is 'dev'
 
-### Hack
+I advise you to run the script `hack` before `hsd`. If there's no conflicts with the `hack` script, then you can run the `hsd` script, else solve the conflicts and run the `hack` script again. That should be all!
+
+#### Hack
 
 This script gets commits from the main branch (master if not set) and rebases the feature branch to the main branch.
 
@@ -50,7 +52,7 @@ hack dev
 ```
 if your main branch is 'dev'
 
-### Ship
+#### Ship
 
 This script merge commits from the feature branch to the main branch (master if not set) and pushes the main branch.
 
@@ -65,7 +67,7 @@ ship dev
 ```
 if your main branch is 'dev'
 
-### Done With Feature
+#### Done With Feature
 
 This script deletes the feature branch and checkouts the main branch (master if not set).
 
