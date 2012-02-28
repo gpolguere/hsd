@@ -1,0 +1,11 @@
+#!/bin/sh -x
+# dwf, aka "Done With Feature" script: deletes current branch and puts you back on master
+ref=$(git symbolic-ref HEAD 2> /dev/null) || exit 0
+CURRENT="${ref#refs/heads/}"
+if [ -n "$1" ]; then
+	master_branch=$1
+else
+	master_branch="master"
+fi
+git checkout ${master_branch}
+git branch -d ${CURRENT}

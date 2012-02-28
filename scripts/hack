@@ -1,0 +1,13 @@
+#!/bin/sh -x
+# hack: Merge the latest changes from the master branch into your current branch
+ref=$(git symbolic-ref HEAD 2> /dev/null) || exit 0
+CURRENT="${ref#refs/heads/}"
+if [ -n "$1" ]; then
+	master_branch=$1
+else
+	master_branch="master"
+fi
+git checkout ${master_branch}
+git pull origin ${master_branch}
+git checkout ${CURRENT}
+git rebase ${master_branch}

@@ -1,0 +1,4 @@
+#!/bin/sh -x
+hack $1
+ship $1
+dwf $1

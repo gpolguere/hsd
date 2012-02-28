@@ -1,0 +1,14 @@
+#!/bin/sh -x
+# Git workflow ship script from: http://reinh.com/blog/2008/08/27/hack-and-and-ship.html
+# git name-rev is fail
+ref=$(git symbolic-ref HEAD 2> /dev/null) || exit 0
+CURRENT="${ref#refs/heads/}"
+if [ -n "$1" ]; then
+	master_branch=$1
+else
+	master_branch="master"
+fi
+git checkout ${master_branch}
+git merge ${CURRENT}
+git push origin ${master_branch}
+git checkout ${CURRENT}
