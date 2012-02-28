@@ -20,6 +20,21 @@ I tweaked them a little bit in order to play with other branches than master.
 gcb new_feature
 ```
 
+### HSD
+
+This script executes the hack & ship & dwf scripts.
+
+```
+hsd
+```
+
+or
+
+```
+hsd dev
+```
+if your main branch is 'dev'
+
 ### Hack
 
 This script gets commits from the main branch (master if not set) and rebases the feature branch to the main branch.
@@ -62,20 +77,5 @@ or
 
 ```
 dwf dev
-```
-if your main branch is 'dev'
-
-### HSD
-
-This script executes the hack & ship & dwf scripts.
-
-```
-hsd
-```
-
-or
-
-```
-hsd dev
 ```
 if your main branch is 'dev'
