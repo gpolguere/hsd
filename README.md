@@ -16,36 +16,66 @@ I tweaked them a little bit in order to play with other branches than master.
 
 ### Checkout a new branch to work on a feature
 
-`gcb new_feature`
+```
+gcb new_feature
+```
 
 ### Hack
 
 This script gets commits from the main branch (master if not set) and rebases the feature branch to the main branch.
 
-`hack`
+```
+hack
+```
+
 or
-`hack dev` if your main branch is 'dev'
+
+```
+hack dev
+```
+if your main branch is 'dev'
 
 ### Ship
 
 This script merge commits from the feature branch to the main branch (master if not set) and pushes the main branch.
 
-`ship`
+```
+ship
+```
+
 or
-`ship dev` if your main branch is 'dev'
+
+```
+ship dev
+```
+if your main branch is 'dev'
 
 ### Done With Feature
 
 This script deletes the feature branch and checkouts the main branch (master if not set).
 
-`dwf`
+```
+dwf
+```
+
 or
-`dwf dev` if your main branch is 'dev'
+
+```
+dwf dev
+```
+if your main branch is 'dev'
 
 ### HSD
 
 This script executes the hack & ship & dwf scripts.
 
-`hsd`
+```
+hsd
+```
+
 or
-`hsd dev` if your main branch is 'dev'
+
+```
+hsd dev
+```
+if your main branch is 'dev'
