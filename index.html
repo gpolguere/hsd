@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Hsd by gpolguere</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/gpolguere/hsd">Fork On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/gpolguere/hsd/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/gpolguere/hsd/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Hsd</h1>
+          <p>Scripts from Jon Rohan on Dead Simple Git Workflow for Agile Teams</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/gpolguere">gpolguere</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>HSD</h1>
+
+<p>Scripts from <a href="http://jonrohan.me/guide/git/dead-simple-git-workflow-for-agile-teams/">Jon Rohan</a></p>
+
+<p>I tweaked them a little bit in order to play with other branches than master.</p>
+
+<h2>Installation</h2>
+
+<ol>
+<li>Download the files. You should have all the scripts in a folder named 'scripts'.</li>
+<li>Move that folder wherever you want.</li>
+<li>Edit your '.bash_profile' file in order to add the 'scripts' path to your PATH environment variable (just add <code>:scripts_path</code> at the end of the line <code>export PATH=$PATH:...</code> to get something like this : <code>export PATH=$PATH:/Users/gilp/dev/scripts</code>)</li>
+<li>Save and close the '.bash_profile' file</li>
+<li>You should be good!</li>
+</ol><h2>Usage</h2>
+
+<h3>Checkout a new branch to work on a feature</h3>
+
+<pre><code>gcb new_feature
+</code></pre>
+
+<h3>HSD</h3>
+
+<p>This script executes the hack &amp; ship &amp; dwf scripts.</p>
+
+<pre><code>hsd
+</code></pre>
+
+<p>or</p>
+
+<pre><code>hsd dev
+</code></pre>
+
+<p>if your main branch is 'dev'</p>
+
+<p>I advise you to run the script <code>hack</code> before <code>hsd</code>. If there's no conflicts with the <code>hack</code> script, then you can run the <code>hsd</code> script, else solve the conflicts and run the <code>hack</code> script again. That should be all!</p>
+
+<h4>Hack</h4>
+
+<p>This script gets commits from the main branch (master if not set) and rebases the feature branch to the main branch.</p>
+
+<pre><code>hack
+</code></pre>
+
+<p>or</p>
+
+<pre><code>hack dev
+</code></pre>
+
+<p>if your main branch is 'dev'</p>
+
+<h4>Ship</h4>
+
+<p>This script merge commits from the feature branch to the main branch (master if not set) and pushes the main branch.</p>
+
+<pre><code>ship
+</code></pre>
+
+<p>or</p>
+
+<pre><code>ship dev
+</code></pre>
+
+<p>if your main branch is 'dev'</p>
+
+<h4>Done With Feature</h4>
+
+<p>This script deletes the feature branch and checkouts the main branch (master if not set).</p>
+
+<pre><code>dwf
+</code></pre>
+
+<p>or</p>
+
+<pre><code>dwf dev
+</code></pre>
+
+<p>if your main branch is 'dev'</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
