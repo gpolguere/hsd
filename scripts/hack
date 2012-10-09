@@ -2,6 +2,10 @@
 # hack: Merge the latest changes from the master branch into your current branch
 ref=$(git symbolic-ref HEAD 2> /dev/null) || exit 0
 CURRENT="${ref#refs/heads/}"
+if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then
+	echo "Dirty repository! Clean it dude!"
+	exit 0
+fi
 if [ -n "$1" ]; then
 	master_branch=$1
 else
