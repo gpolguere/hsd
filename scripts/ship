@@ -10,5 +10,5 @@ else
 fi
 git checkout ${master_branch}
 git merge ${CURRENT}
-git push origin ${master_branch}
+git push origin ${master_branch} --follow-tags
 git checkout ${CURRENT}
