@@ -12,6 +12,6 @@ else
 	master_branch="master"
 fi
 git checkout ${master_branch}
-git pull origin ${master_branch} --tags
+git pull origin ${master_branch} --no-rebase --tags
 git checkout ${CURRENT}
 git rebase ${master_branch}
