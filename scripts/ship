@@ -6,8 +6,13 @@ CURRENT="${ref#refs/heads/}"
 if [ -n "$1" ]; then
 	master_branch=$1
 else
-	master_branch="master"
+	if [ -n "$(git branch --list main)" ]; then
+		master_branch="main"
+	else
+		master_branch="master"
+	fi
 fi
+
 git checkout ${master_branch}
 git merge ${CURRENT}
 git push origin ${master_branch} --follow-tags
