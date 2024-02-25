@@ -9,7 +9,11 @@ fi
 if [ -n "$1" ]; then
 	master_branch=$1
 else
-	master_branch="master"
+	if [ -n "$(git branch --list main)" ]; then
+		master_branch="main"
+	else
+		master_branch="master"
+	fi
 fi
 git checkout ${master_branch}
 git pull origin ${master_branch} --no-rebase --tags
